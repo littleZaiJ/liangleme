@@ -1,18 +1,11 @@
-//
-//  llmApp.swift
-//  llm
-//
-//  Created by Zai.J on 2026/1/18.
-//
-
 import SwiftUI
 import SwiftData
 
 @main
-struct llmApp: App {
+struct LiangLeMeApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            WaitingRecord.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -26,6 +19,7 @@ struct llmApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
